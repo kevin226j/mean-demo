@@ -1,0 +1,46 @@
+<!-- <section id="page-header-secion" class="alter-heading" >
+</section> -->
+
+<section id="content-section align-center" class="page" style="padding-top: 10%;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-push-4">
+
+        <!-- Begin content wrap -->
+        <div class="content-wrap">
+          <div class="row">
+
+            <!-- Left column -->
+            <div class="col-lg-12 col-md-12 margin-bottom-30">
+
+              <!-- Begin tabs -->
+              <div class="tabs-wrap">
+
+                <div class="login-wrapper margin-top-50">
+                  <h4><i class="fas fa-users"></i> Login</h4>
+
+                  <!-- Begin login form -->
+                  <form id="login-form" class="margin-top-40">
+
+                      <input-component [type]="'email'" [control]="loginForm.controls['username']" [placeholder]="'Enter Username *'"></input-component>
+
+                      <input-component [type]="'password'" [control]="loginForm.controls['password']" [placeholder]="'Enter Password *'"></input-component>
+
+                    <button type="submit" class="btn btn-primary btn-rounded-5x btn-block margin-top-40" [tsSubmitIfValid]="loginForm" (valid)="login()" >Login</button>
+                  </form>
+                  <!-- End login form -->
+
+                </div> <!-- /.login-wrapper -->
+              </div>
+              <!-- End tabs -->
+            </div> <!-- /.col -->
+          </div> <!-- /.row -->
+        </div>
+        <!-- End content wrap -->
+
+      </div> <!-- /.col -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</section>
+<!-- End content section -->

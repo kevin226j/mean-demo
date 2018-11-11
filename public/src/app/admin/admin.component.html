@@ -1,0 +1,148 @@
+<!-- <section id="page-header-secion" class="alter-heading" header-image-component [props]="{
+    image: '',
+    title : 'Dashboard',
+    breadcrumb1: 'Admin',
+    breadcrumb2: 'Dashboard'
+    }">
+</section> -->
+
+<section id="content-section" class="page">
+
+  <!-- <ngx-spinner bdColor="rgba(20, 20, 20, 0.8)" size="large" color="#fff" type="line-scale"></ngx-spinner> -->
+
+  <div class="container max-width-1300">
+    <div class="row">
+      <div class="col-md-12 col-md-push-0">
+
+        <!-- Begin content wrap -->
+        <div class="content-wrap">
+
+          <!-- Begin blog list
+                            ===================== -->
+          <div class="blog-list">
+            <div class="row">
+
+              <!-- Left column -->
+              <div class="col-md-9 col-md-push-3">
+
+
+                <div class="blog-post-comments">
+
+                  <div *ngIf="current === 'welcome'">
+                    <div class="bli-info">
+                      <h1 class="bli-title"><a style="cursor:default" title="Paris Fashion Week">Welcome Back to your
+                          Dashboard!</a></h1>
+                      <div class="bli-meta">
+                        <h4>Dashboard Information:</h4>
+                      </div>
+
+                      <ol class="bli-desc">
+                        <li>After the instance of logging in, this dashboard will expire after one full day.</li>
+                        <li>Right side panel will allow you to navigate between each manageable component. Note that,
+                          there is no auto-save; meaning if a new tab is clicked, informaiton stored on a previous tab
+                          will be lost.
+                        </li>
+                        <li>This dashboard enables the user to edit the following sections:
+                          <ul>
+                            <li>
+                              <i>Tag</i>: allowing full access to add, update, and delete a tag. Note: if an album does not contain a tag, it will NOT
+                              apear on drop-down, or filter component.
+                              <br />
+                              <div class="bli-button">
+                                <a (click)="setComponent('tag')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit the
+                                  Tags Now!</a>
+                              </div>
+                            </li>
+
+
+                            <li>
+                              <i>Album</i>: allowing user to customize an album. It is recommended to create an album as the following step from the tag section above. If
+                              tag is already in place, proceed in this section.
+                              <br />
+                              <div class="bli-button">
+                                <a (click)="setComponent('album')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit the
+                                  Albums Now!</a>
+                              </div>
+                            </li>
+
+                            <li>
+                                <i>Photos</i>: allowing user to
+                                preview photos to upload before adding them to selected album. Note, there is some wait time when viewing current photos as its pulling data from multiple resources.
+                                <br />
+                                <div class="bli-button">
+                                  <a (click)="setComponent('photos')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit the
+                                    Photos Now!</a>
+                                </div>
+                              </li>
+                          </ul>
+                        </li>
+                      </ol>
+
+                    </div>
+                  </div>
+
+                  <!-- PLACE FORMS HERE -->
+                  <div *ngIf="current === 'tag'">
+                    <admin-managetag-component></admin-managetag-component>
+                  </div>
+
+                  <div *ngIf="current === 'album'">
+                    <admin-album-component></admin-album-component>
+                  </div>
+
+                  <div *ngIf="current === 'photos'">
+                    <admin-photos-component></admin-photos-component>
+                  </div>
+                </div>
+
+              </div> <!-- /.col (Left column) -->
+
+
+              <!-- Right column -->
+              <div class="col-md-3 col-md-pull-9">
+
+                <!-- Begin sidebar 
+                                        ==================== -->
+                <div class="sidebar sidebar-left">
+                  <div class="row">
+
+
+
+                    <div class="col-md-12 col-sm-6">
+                      <!-- Begin sidebar widget -->
+                      <div class="sidebar-widget sidebar-categories">
+                        <h3 class="sidebar-heading">Dashboard Components</h3>
+                        <hr class="hr-short">
+                        <ul class="list-unstyled">
+                          <li><a (click)="setComponent('welcome')">Welcome</a></li>
+                          <li><a (click)="setComponent('tag')">Tags</a></li>
+                          <li><a (click)="setComponent('album')">Album</a></li>
+                          <li><a (click)="setComponent('photos')">Photos</a></li>
+                          <li><a></a></li>
+                        </ul>
+                      </div>
+                      <swal #welcomeSwal [options]="{title : 'Welcome Back!',type : 'success', toast: false,position: 'center', background: '#fff', showCancelButton: false, showConfirmButton: false, timer: 3000}">
+                      </swal>
+                      <!-- End sidebar widget -->
+                    </div> <!-- /.col -->
+
+                  </div> <!-- /.row -->
+                </div>
+                <!-- End sidebar -->
+
+              </div> <!-- /.col (Right column) -->
+
+            </div> <!-- /.row -->
+          </div>
+          <!-- End blog-list -->
+
+        </div>
+        <!-- End content wrap -->
+
+      </div> <!-- /.col -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+
+
+</section>
+<!-- End content section -->

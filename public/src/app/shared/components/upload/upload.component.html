@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label class="upload-container" [ngClass]="{'error': !control.value && control.invalid && (control.dirty || control.touched)}">
+    <input class="upload" #imageInput type="file" accept="image/*" (change)="processFile($event)" [disabled]="control.value">
+    <span class="upload-label">
+      {{ 
+        !fileName || !control.value || control.invalid ?  'Select Image *' : (innerWidth < 1000 ) ? fileName : (fileName.length> 20) ? (fileName |
+        slice:0:20) + '..' : fileName
+      
+      }}
+        <a *ngIf="fileName" (click)="removeImage()"><span class="upload-status glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+    </span>
+    <input type="hidden" name="fileHidden" [formControl] = "control" minlength="1" />
+  </label>
+</div>

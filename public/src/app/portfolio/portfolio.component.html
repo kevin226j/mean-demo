@@ -1,0 +1,31 @@
+<!-- Begin page header section -->
+<section id="page-header-secion" class="alter-heading" header-image-component [props]="{
+  image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=54d6bc8400852ef2a25e64adde175db2&auto=format&fit=crop&w=2534&q=80',
+  title : 'Portfolio',
+  breadcrumb1: 'Home',
+  breadcrumb2: 'Portfolio'
+  }">
+</section>
+<!-- End page header section -->
+
+
+<!-- ============================ 
+			///// Begin content section /////
+			============================= -->
+<section id="content-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- Begin content wrap -->
+        <div class="content-wrap">
+            <masonry-album-component [albumItems] = "Albums"></masonry-album-component>
+        </div>
+        <!-- End content wrap -->
+
+      </div> <!-- /.col -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</section>
+<!-- End content section -->
+

@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-md-8">
+    <!-- Begin Form -->
+    <form [formGroup]="albumForm" id="post-comment-form">
+      <h2>Album:</h2>
+      <div class="row">
+        <div class="col-lg-12">
+          <dropdown-component [items]="categoryItems" [control]="albumForm.controls['category']" [placeholder]="'Select Category *'"></dropdown-component>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <input-component [type]="'text'" [control]="albumForm.controls['name']" [placeholder]="'Album Name *'"></input-component>
+        </div>
+        <div class="col-lg-6">
+          <upload-component [control]="albumForm.controls['image']" (returnFile)="getFile($event)"></upload-component>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <dropdown-component [items]="tagItems" [control]="albumForm.controls['tag']" [placeholder]="'Select Tag *'"></dropdown-component>
+        </div>
+        <!-- <div class="col-lg-3">
+          <input-component [type]="'number'" [control]="albumForm.controls['total']" [placeholder]="'Total # *'"></input-component>
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <textarea-component [control]="albumForm.controls['description']" [placeholder]="'Description *'" [rows]=5></textarea-component>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <button type="submit" class="btn btn-rounded-5x" [ngClass]="status.id ? 'btn-primary-bordered' : 'btn-primary'"
+            [tsSubmitIfValid]="albumForm" (valid)="onSubmit()">{{status.id ? 'Update!' : 'Submit' }}</button>
+        </div>
+      </div>
+    </form>
+    <!-- End Form -->
+  </div>
+
+  <div class="col-md-4">
+    <div class="sidebar sidebar-right">
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <!-- Begin sidebar widget -->
+          <div class="sidebar-widget sidebar-categories">
+            <h3 class="sidebar-heading">Album List</h3>
+            <hr class="hr-short">
+            <ul class="list-unstyled">
+              <li *ngFor="let album of albums">
+                <label class="list-item">{{album.name}}</label>
+                <span class="remove glyphicon glyphicon-trash" aria-hidden="true" (click)="onClick(album._id,'remove')"></span>
+                <span class="edit glyphicon glyphicon-wrench" aria-hidden="true" (click)="onClick(album._id,'edit')"></span>
+              </li>
+            </ul>
+          </div>
+          <!-- End sidebar widget -->
+        </div> <!-- /.col -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<swal #successSwal [options]="{title : 'Success!',type : 'success', toast: false,position: 'center', background: '#fff', showCancelButton: false, showConfirmButton: false, timer: 2000}">
+</swal>
+
+<swal #deleteSwal [options]="{ width: '40%',title :'Are you sure?' ,type: 'error' ,showCancelButton: true,  showConfirmButton: true, background: '#fff', cancelButtonColor: '#aaa',confirmButtonText: 'Yes, delete!',  confirmButtonColor: '#EC3A35'}">
+</swal>

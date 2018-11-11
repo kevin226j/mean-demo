@@ -20,12 +20,34 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config"
             ],
             "styles": [
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/fontawesome/css/all.min.css",
+              "src/assets/vendor/lightgallery/css/lightgallery.min.css",
+              "src/assets/vendor/justifiedgallery/css/justifiedGallery.min.css",
+              "src/assets/vendor/owl-carousel/css/owl.carousel.min.css",
+              "src/assets/vendor/owl-carousel/css/owl.theme.default.min.css",
+              "src/assets/vendor/animate.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.min.js",
+              "src/assets/vendor/lightgallery/js/lightgallery-all.min.js",
+              "src/assets/vendor/jquery.mousewheel.min.js",
+              "src/assets/vendor/jquery.easing.min.js",
+              "node_modules/isotope-layout/dist/isotope.pkgd.min.js",
+              "node_modules/imagesloaded/imagesloaded.pkgd.min.js",
+              "src/assets/vendor/imagesloaded.pkgd.min.js",
+              "src/assets/vendor/justifiedgallery/js/jquery.justifiedGallery.min.js",
+              "src/assets/vendor/smoothscroll.js",
+              "src/assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js",
+              "src/assets/vendor/owl-carousel/js/owl.carousel.min.js",
+              "src/assets/js/theme.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -43,14 +65,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
@@ -105,7 +120,6 @@
     "public-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",

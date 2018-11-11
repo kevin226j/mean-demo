@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/css/theme.css";
+@import "./assets/css/helper.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+.ng-select.custom {
+    border:0px;
+    min-height: 45px;
+    border-radius: 20px;
+    position: relative;
+    color: #555;
+    margin-bottom: 18px;
+    font-size: 12px;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 45px;
+    border-radius: 20px;
+    position: relative;
+    color: #999;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(204, 204, 204, 0.09);
+}
+
+
+

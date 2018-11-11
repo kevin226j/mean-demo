@@ -1,0 +1,79 @@
+<!-- ================================
+///// Begin page header section /////
+================================= -->
+<section id="page-header-secion" album-header-component [props]="headerProps">
+</section>
+<!-- End page header section -->
+
+
+<section *ngIf = "albumInfo.total == 0" id="content-section" class="album-single" style="padding-bottom: 30%;">
+
+</section>
+
+<!-- ============================
+///// Begin content section /////
+============================= -->
+<section *ngIf = "albumInfo.total !== 0" id="content-section" class="album-single" style="padding-bottom: 5%;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- Begin content wrap -->
+        <div class="content-wrap">
+          <div class="isotope gutter-2 col-6">
+            <!-- Begin isotope items (album single items)
+            =============================================== 
+            * Use classes "hover-center", "hover-boxed", "hover-dark", "hover-simple" to change album single item hover variations.
+            * Note1: For grid layout make sure that your images are the same dimensions.
+            * Note2: For masonry layout make sure that your images are the different dimensions.
+            -->
+            <div id="gallery" class="isotope-items-wrap lightgallery hover-center  hover-dark">
+
+              <!-- Grid sizer (do not remove!!!) -->
+              <div class="grid-sizer"></div>
+              <ng-masonry-grid 
+              [masonryOptions]="{gutter: 1, columnWidth: 1, transitionDuration: '0.7s'}" 
+              [useAnimation]="true"
+              [useImagesLoaded]="true"
+              [scrollAnimationOptions]="{ animationEffect: 'effect-1', minDuration : 0, maxDuration : 0, viewportFactor : 8 }">
+
+                <ng-masonry-grid-item id="{{'masonry-item-'+i}}" class="isotope-item" *ngFor="let photo of albumPhotos; let i = index">
+                  <!-- Begin album single item -->
+                  <div class = "grid">
+                  <div class="grid-item" [lightbox]="i" [gallery]="galleryId">
+                    <div class="album-single-item">
+                      <img class="asi-img" src="{{baseurl + photo.image}}" alt="image">
+                      <!-- Begin item cover -->
+                      <div class="asi-cover">    
+                        <a class="asi-link lg-trigger" [attr.data-exthumbnail]="baseurl + photo.image">
+                          <div class="asi-info">
+                            <span class="s-icon"><i class="fas fa-search"></i></span>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End item cover -->
+                    </div>
+                  </div>
+                </div>
+                  <!-- End album single item -->
+
+                </ng-masonry-grid-item>
+              </ng-masonry-grid>
+
+            </div>
+            <!-- End isotope items wrap -->
+
+          </div>
+          <!-- End isotope -->
+
+        </div>
+        <!-- End content wrap -->
+
+      </div> <!-- /.col -->
+    </div> <!-- /.row -->
+
+  </div> <!-- /.container -->
+</section>
+
+
+<!-- End content section -->

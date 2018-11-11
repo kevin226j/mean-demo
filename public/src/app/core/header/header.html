@@ -1,0 +1,53 @@
+<div *ngIf = "authService.isLoggedIn()" class="header-inner" (window:resize)="onResize($event)">
+  <!-- Begin logo -->
+  <div id="logo">
+    <a href="#" class="logo-dark"><img src="assets/img/logo1.png" alt="logo"></a>
+  </div>
+  <!-- End logo -->
+  <nav class="navbar navbar-border-bottom">
+    <div class="navbar-inner">
+
+      <!-- Toggle for better mobile display -->
+      <div  class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" (click)="toggleState()"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div> <!-- /.navbar-header -->
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse select-tag-item" id="navbar-collapse-1" [ngClass]="{ 'in': isIn }">
+        <ul class="nav navbar-nav navbar-right">
+ 
+          <!-- HOME -->
+          <li class="dropdown dropdown-hover" [ngClass]='{active : href.includes("/home") || !href}'>
+            <a href="/home" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Home</a>
+          </li>
+
+          <!-- PORTFOLIO -->
+          <li class="dropdown dropdown-hover" [ngClass]='{active : href.includes("portfolio")}'>
+            <a href="/portfolio" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Portfolio <span *ngIf="portfolioCategory && !href.includes('portfolio') && innerWidth > 750"
+                class="caret-2"><i class="fas fa-chevron-down"></i></span></a>
+            <ul *ngIf = "!href.includes('portfolio')" class="dropdown-menu" (mouseover)= "searchTag($event)">
+              <li  *ngFor="let item of portfolioCategory"><a  href = "/portfolio?prefilter={{selectedDropDown}}"> {{item}}</a></li>
+            </ul>
+          </li>
+          <li class="dropdown dropdown-hover" [ngClass]='{active : href.includes("/dashboard") || !href}'>
+            <a href="/dashboard" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+          </li>
+
+          <li class="dropdown dropdown-hover">
+            <a (click)="logout()" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Logout</a>
+          </li>
+
+        </ul> <!-- /.nav -->
+      </div> <!-- /.navbar-collapse -->
+
+    </div> <!-- /.navbar-inner -->
+  </nav>
+  <!-- End menu -->
+
+</div> <!-- /.header-inner -->

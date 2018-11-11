@@ -1,0 +1,104 @@
+<form id="post-comment-form" [formGroup]="photoForm">
+  <h1>Photos:</h1>
+  <div class="row">
+    <div class="col-lg-6">
+      <dropdown-component (selection)="getPhotos($event)" [markFirst]="true" [items]="albumItems" [control]="photoForm.controls['albumName']"
+        [placeholder]="'Select ALbum *'" (change)="getPhotos($event)"></dropdown-component>
+
+    </div>
+    <div class="col-lg-6">
+      <upload-component [control]="photoForm.controls['image']" (returnFile)="getFile($event)"></upload-component>
+    </div>
+  </div>
+
+  <!-- PREVIEW PHOTOS  -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Preview Photos</h2>
+      <!-- Begin content wrap -->
+      <div class="content-wrap">
+        <div class="isotope gutter-2 col-6">
+          <div id="gallery" class="isotope-items-wrap lightgallery hover-center hover-dark">
+
+            <ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
+              <ngxMasonryItem class="isotope-item" *ngFor="let photo of photosToDisplay; let i = index" (click)="onDelete(i)">
+                <!-- Begin album single item -->
+                <div class="grid">
+                  <div class="grid-item">
+                    <div class="album-single-item">
+                      <img class="asi-img imagesize" src="{{photo}}" alt="image">
+                      <!-- Begin item cover -->
+                      <div class="asi-cover">
+                        <a class="asi-link lg-trigger">
+                          <div class="asi-info">
+                            <span class="s-icon"><i class="fas fa-trash-alt"></i></span>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End item cover -->
+                    </div>
+                  </div>
+                </div>
+              </ngxMasonryItem>
+            </ngx-masonry>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CURRENT PHOTOS IN ALBUM  -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Current Photos</h2>
+      <!-- Begin content wrap -->
+      <div class="content-wrap">
+        <div class="isotope gutter-2 col-6">
+          <div id="gallery" class="isotope-items-wrap lightgallery hover-center hover-dark">
+            <ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
+              <ngxMasonryItem class="isotope-item" *ngFor="let item of photosFromAlbum; let i = index" (click)="onDelete(item._id, item.image)">
+                <!-- Begin album single item -->
+                <div class="grid">
+                  <div class="grid-item">
+                    <div class="album-single-item">
+                      <img class="asi-img imagesize" src="{{ awsbucket + item.image}}" alt="image">
+                      <!-- Begin item cover -->
+                      <div class="asi-cover">
+                        <a class="asi-link lg-trigger">
+                          <div class="asi-info">
+                            <span class="s-icon"><i class="fas fa-trash-alt"></i></span>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End item cover -->
+                    </div>
+                  </div>
+                </div>
+                <!-- End album single item -->
+              </ngxMasonryItem>
+            </ngx-masonry>
+
+          </div>
+        </div>
+      </div>
+    </div> <!-- /.col -->
+  </div> <!-- /.row -->
+
+  <div class="row">
+    <div class="col-lg-12 col-md-6 col-sm-3">
+      <button type="submit" class="btn btn-rounded-5x btn-primary-bordered" (click)="onSubmit()">Upload and Save
+        Changes</button>
+    </div>
+  </div>
+
+</form>
+
+
+<swal #successSwal [options]="{title : 'Success!',type : 'success', toast: false,position: 'center', background: '#fff', showCancelButton: false, showConfirmButton: false, timer: 2000}">
+</swal>
+
+<swal #deleteSwal [options]="{ width: '40%',title :'Are you sure?' ,type: 'error' ,showCancelButton: true,  showConfirmButton: true, background: '#fff', cancelButtonColor: '#aaa',confirmButtonText: 'Yes, delete!',  confirmButtonColor: '#EC3A35'}">
+</swal>

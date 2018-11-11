@@ -1,0 +1,71 @@
+
+<div class="isotope gutter-2 col-6">
+
+    <div class="gallery-top-content">
+  
+      <div class="row margin-bottom-40">
+        <div class="col-md-8">
+  
+          <!-- Begin isotope filter -->
+          <div class="isotope-filter">
+  
+            <!-- Begin isotope filter toggle button -->
+            <div class="navbar-header visible-xs">
+              <button type="button" class="navbar-toggle collapsed filter-toggle-btn" (click)="toggleState()" data-toggle="collapse" data-target="#isotope-filter-collapse" aria-expanded="false">
+                <span class="text-center">Filter <i class="fas fa-bars"></i></span>
+              </button>
+            </div>
+            <!-- End isotope filter toggle button -->
+  
+            <h2 class="filter-heading">Filters</h2>
+  
+            <!-- Begin isotope filter links -->
+            <div class="isotope-filter-links collapse navbar-collapse no-padding" aria-expanded="false" [ngClass]="{ 'in': isIn }">
+                <a *ngFor = "let tag of tagItems; let i = index" [ngClass]="{active : tagSelection === tagItems[i]}" >{{tag}}</a>
+            </div>
+            <!-- End isotope filter links -->
+  
+          </div>
+          <!-- End isotope filter -->
+  
+        </div> <!-- /.col -->
+      </div> <!-- /.row -->
+  
+    </div> 
+   
+
+    <div class="isotope-items-wrap caption-gradient">
+      <div class="grid-sizer"></div>
+
+
+      <ng-masonry-grid (layoutComplete)="checkIfLoaded($event)" 
+      (onNgMasonryInit)="onNgMasonryInit($event)"
+      [masonryOptions]="{gutter: 1, columnWidth: 1}" 
+      [useAnimation]="true"
+      [useImagesLoaded]="true"
+      [scrollAnimationOptions]="{ animationEffect: 'effect-1', minDuration : 0, maxDuration : 0, viewportFactor : 8 }">
+      
+        <ng-masonry-grid-item id="{{'masonry-item-'+i}}"  [ngClass]="{'isotope-item item.tagAttr' : true}" *ngFor="let album of albumItems| filterByTag:tagSelection; let i = index">
+          <!-- <p>{{i|json}}</p> -->
+          <div class="album-list-item">
+            <a class="ali-link disabled" href="{{href}}/{{album.name}}">
+              <div class="ali-img-wrap">
+                <img class="ali-img" src="{{baseurl+album.image}}" alt="image">
+              </div>
+              <div class="ali-caption">
+                <h2 class="ali-title">{{album.name}}</h2>
+                <div class="ali-meta">{{album.total}} photos</div>
+              </div>
+            </a>
+          </div>
+        </ng-masonry-grid-item>
+
+      </ng-masonry-grid>
+
+
+  
+
+    </div>
+  </div>
+
+  

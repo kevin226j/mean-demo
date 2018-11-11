@@ -1,0 +1,28 @@
+
+  <!-- Begin page header image 
+       ===============================
+    * Use class "parallax" to enable parallax effect.
+    -->
+  <div class="page-header-image parallax bg-image" [style.background-image] = "imageURL" style="background-position: 50% 50%;"></div>
+  <!-- End page header image -->
+
+  <!-- Element cover -->
+  <div class="cover page-header-cover"></div>
+
+  <!-- Begin page header info -->
+  <div class="container-fluid page-header-content no-padding">
+    <div class="row">
+      <div class="col-md-12">
+        
+        <h1 class="album-title">{{props.title}}</h1>
+        <ol class="breadcrumb">
+                <li><a href="index.html">{{props.breadcrumb1}}</a></li>
+                <li class="active">{{props.breadcrumb2}}</li>
+        </ol>
+
+      </div> <!-- /.col -->
+    </div> <!-- /.row -->
+  </div>
+  <!-- End page header info --> 
+
+

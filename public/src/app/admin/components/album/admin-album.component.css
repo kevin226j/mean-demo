@@ -1,0 +1,20 @@
+li .edit {
+    float: right;
+    right: 15px;
+}
+
+li .edit:hover {
+    cursor:pointer;
+    color: #987F28;
+}
+.remove {
+    float:right;
+}
+li .remove:hover {
+    cursor:pointer;
+    color: #987F28;
+}
+
+#content-section {
+    padding: none !important
+}

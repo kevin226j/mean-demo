@@ -1,0 +1,93 @@
+<!-- Begin page header image 
+===============================
+* Use class "parallax" to enable parallax effect.-->
+<div class="page-header-image parallax bg-image" style="background-image: url('https://images.unsplash.com/photo-1500051638674-ff996a0ec29e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3969f232784b2b43d8bdbef93b603ffe&auto=format&fit=crop&w=1692&q=80'); background-position: 50% 50%;"></div>
+<!-- End page header image -->
+
+<!-- Element cover -->
+<div class="cover page-header-cover"></div>
+
+<!-- Begin page header info -->
+<div class="container-fluid page-header-content no-padding">
+  <div class="row">
+    <div class="col-md-4">
+
+      <h1 class="album-title">{{props.title}}</h1>
+
+      <!-- Begin album meta -->
+      <div class="album-meta">
+        <span class="photos-count">{{props.numberOfPhotos}} Photos</span>
+      </div>
+      <!-- End album meta -->
+
+    </div> <!-- /.col -->
+ 
+    <div class="col-md-4">
+
+      <!-- Begin album description -->
+      <div class="album-description">
+        <div class="al-desc-inner">
+          <p>{{props.description}}</p>
+        </div>
+
+      </div>
+      <!-- End album description -->
+
+    </div> <!-- /.col -->
+
+    <div class="col-md-4">
+
+      <!-- Begin album nav 
+                              ===================== -->
+      <div class="album-nav">
+
+
+        <!-- style="background-image: url({{props.prevAlbumPhoto}}); background-position: 50% 50%;" -->
+
+
+        <!-- Begin album nav item -->
+        <a *ngIf ="props.prevAlbum.indexOf('/') !== props.prevAlbum.length-1" href="{{props.prevAlbum}}" class="an-item prev-album bg-image" [style.background-image]="prevPhoto" style="background-position: 50% 50%;"
+          title="Previous album">
+          <!-- Element cover -->
+          <div class="cover"></div>
+
+          <div class="an-item-info">
+            <span class="an-icon"><i class="fas fa-chevron-left"></i></span>
+            <span class="an-text">Prev</span>
+          </div>
+        </a>
+        <!-- End album nav item -->
+
+        <!-- Begin album nav item -->
+        <a href="/{{props.currentCategory}}" class="an-item to-album-list bg-image" style="background-image: url(assets/img/stock/image1.jpg); background-position: 50% 50%;"
+          title="Back to album list">
+          <!-- Element cover -->
+          <div class="cover"></div>
+
+          <div class="an-item-info">
+            <span class="an-icon"><i class="fas fa-th-list"></i></span>
+            <span class="an-text">List</span>
+          </div>
+        </a>
+        <!-- End album nav item -->
+
+        <!-- Begin album nav item -->
+        <a *ngIf ="props.nextAlbum.indexOf('/') !== props.nextAlbum.length-1" href="{{props.nextAlbum}}" class="an-item next-album bg-image" [style.background-image]="nextPhoto" style="background-position: 50% 50%;"
+          title="Next album">
+          <!-- Element cover -->
+          <div class="cover"></div>
+
+          <div class="an-item-info">
+            <span class="an-icon"><i class="fas fa-chevron-right"></i></span>
+            <span class="an-text">Next</span>
+          </div>
+        </a>
+        <!-- End album nav item -->
+
+      </div>
+      <!-- End album nav -->
+
+    </div> <!-- /.col -->
+  </div> <!-- /.row -->
+</div>
+<!-- End page header info -->

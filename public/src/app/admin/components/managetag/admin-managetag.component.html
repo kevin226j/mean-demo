@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-8">
+    <!-- Begin Form -->
+    <form [formGroup]="tagForm" id="post-comment-form">
+      <h2>Tags:</h2>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <input-component [type]="'text'" [control]="tagForm.controls['tagName']" [placeholder]="'Tag Name *'"></input-component>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <button type="submit" class="btn btn-rounded-5x" style = "width:100%" [ngClass]="status.id ? 'btn-primary-bordered' : 'btn-primary'"
+            [tsSubmitIfValid]="tagForm" (valid)="onSubmit()">{{status.id ? 'Update!' : 'Submit' }}</button>
+        </div>
+      </div>
+      <div class = "row"><p></p></div>
+      <div class = "row"><p></p></div>
+      <div class = "row"><p></p></div>
+      <div class = "row"><p></p></div>
+      <div class = "row"><p></p></div>
+      <div class = "row"><p></p></div>
+    </form>
+    <!-- End Form -->
+  </div>
+
+  <div class="col-md-4">
+    <div class="sidebar sidebar-right">
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <!-- Begin sidebar widget -->
+          <div class="sidebar-widget sidebar-categories">
+            <h3 class="sidebar-heading">Tag List</h3>
+            <hr class="hr-short">
+            <ul class="list-unstyled">
+              <li *ngFor="let tag of tags">
+                <label class="list-item">{{tag.tagName}}</label>
+                <span class="remove glyphicon glyphicon-trash" aria-hidden="true" (click)="onClick(tag._id,'remove')"></span>
+                <span class="edit glyphicon glyphicon-wrench" aria-hidden="true" (click)="onClick(tag._id,'edit')"></span>
+              </li>
+            </ul>
+          </div>
+          <!-- End sidebar widget -->
+        </div> <!-- /.col -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<swal #successSwal [options]="{title : 'Success!',type : 'success', toast: false,position: 'center', background: '#fff', showCancelButton: false, showConfirmButton: false, timer: 2000}">
+</swal>
+
+<swal #deleteSwal [options]="{ width: '40%',title :'Are you sure?' ,type: 'error' ,showCancelButton: true,  showConfirmButton: true, background: '#fff', cancelButtonColor: '#aaa',confirmButtonText: 'Yes, delete!',  confirmButtonColor: '#EC3A35'}">
+</swal>
