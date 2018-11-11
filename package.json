@@ -1,5 +1,5 @@
 {
-  "name": "Share Photos Demo",
+  "name": "share-photos-demo",
   "version": "1.0.0",
   "description": "The project will use the MEAN stack for development",
   "main": "server.js",
