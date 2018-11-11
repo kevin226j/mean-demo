@@ -1,5 +1,5 @@
 {
-  "name": "luis-maritnez-photography",
+  "name": "Share Photos Demo",
   "version": "1.0.0",
   "description": "The project will use the MEAN stack for development",
   "main": "server.js",
@@ -14,11 +14,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://kevin226j@bitbucket.org/kevin226j/luis-maritnez-photography.git"
+    "url": "git+https://github.com/kevin226j/share_photos.git"
   },
   "author": "Kevin J",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/kevin226j/luis-maritnez-photography#readme",
+  "homepage": "https://github.com/kevin226j/share_photos",
   "dependencies": {
     "@angular-devkit/build-angular": "^0.10.4",
     "@angular/animations": "^6.1.0",
