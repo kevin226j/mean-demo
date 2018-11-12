@@ -20,7 +20,7 @@ input[type="file"] {
     border-radius: 20px;
     position: relative;
     color: #999;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: #fff;
     border-color: rgba(204, 204, 204, 0.09);
     transition: all 0.2s ease-in-out;
 }
@@ -29,7 +29,7 @@ input[type="file"] {
     cursor: pointer;
     background-color: #987F28;
     border-color: #987F28;
-    
+    color: black;
 }
 
 .upload-label {

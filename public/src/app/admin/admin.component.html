@@ -30,27 +30,25 @@
 
                   <div *ngIf="current === 'welcome'">
                     <div class="bli-info">
-                      <h1 class="bli-title"><a style="cursor:default" title="Paris Fashion Week">Welcome Back to your
-                          Dashboard!</a></h1>
+
                       <div class="bli-meta">
                         <h4>Dashboard Information:</h4>
                       </div>
 
                       <ol class="bli-desc">
-                        <li>After the instance of logging in, this dashboard will expire after one full day.</li>
-                        <li>Right side panel will allow you to navigate between each manageable component. Note that,
+                        <li>After the instance of logging in, this application will expire after one full day.</li>
+                        <li>Left side panel will allow you to navigate between each manageable component. Note that,
                           there is no auto-save; meaning if a new tab is clicked, informaiton stored on a previous tab
                           will be lost.
                         </li>
-                        <li>This dashboard enables the user to edit the following sections:
+                        <li>This dashboard enables the user to perform CRUD operations for the following sections:
                           <ul>
                             <li>
-                              <i>Tag</i>: allowing full access to add, update, and delete a tag. Note: if an album does not contain a tag, it will NOT
+                              <i>Tags</i>: allowing user to manage tags. Note: if an album does not contain a tag, it will NOT
                               apear on drop-down, or filter component.
                               <br />
                               <div class="bli-button">
-                                <a (click)="setComponent('tag')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit the
-                                  Tags Now!</a>
+                                <a (click)="setComponent('tag')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit Tags Now!</a>
                               </div>
                             </li>
 
@@ -60,8 +58,7 @@
                               tag is already in place, proceed in this section.
                               <br />
                               <div class="bli-button">
-                                <a (click)="setComponent('album')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit the
-                                  Albums Now!</a>
+                                <a (click)="setComponent('album')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit Albums Now!</a>
                               </div>
                             </li>
 
@@ -70,12 +67,12 @@
                                 preview photos to upload before adding them to selected album. Note, there is some wait time when viewing current photos as its pulling data from multiple resources.
                                 <br />
                                 <div class="bli-button">
-                                  <a (click)="setComponent('photos')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit the
-                                    Photos Now!</a>
+                                  <a (click)="setComponent('photos')" class="btn btn-dark btn-rounded-5x btn-sm"> Edit Photos Now!</a>
                                 </div>
                               </li>
                           </ul>
                         </li>
+                        <li>When you're done, go back to the homepage to checkout your changes!</li>
                       </ol>
 
                     </div>
