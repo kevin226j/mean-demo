@@ -826,14 +826,14 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/assets/vendor/bootstrap/css/bootstrap.min.css */"./src/assets/vendor/bootstrap/css/bootstrap.min.css");
-__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/assets/vendor/fontawesome/css/all.min.css */"./src/assets/vendor/fontawesome/css/all.min.css");
-__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/assets/vendor/lightgallery/css/lightgallery.min.css */"./src/assets/vendor/lightgallery/css/lightgallery.min.css");
-__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/assets/vendor/justifiedgallery/css/justifiedGallery.min.css */"./src/assets/vendor/justifiedgallery/css/justifiedGallery.min.css");
-__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/assets/vendor/owl-carousel/css/owl.carousel.min.css */"./src/assets/vendor/owl-carousel/css/owl.carousel.min.css");
-__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/assets/vendor/owl-carousel/css/owl.theme.default.min.css */"./src/assets/vendor/owl-carousel/css/owl.theme.default.min.css");
-__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/assets/vendor/animate.min.css */"./src/assets/vendor/animate.min.css");
-module.exports = __webpack_require__(/*! /Users/Kevin226j/Desktop/Development/lmp_demo/public/src/styles.css */"./src/styles.css");
+__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/assets/vendor/bootstrap/css/bootstrap.min.css */"./src/assets/vendor/bootstrap/css/bootstrap.min.css");
+__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/assets/vendor/fontawesome/css/all.min.css */"./src/assets/vendor/fontawesome/css/all.min.css");
+__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/assets/vendor/lightgallery/css/lightgallery.min.css */"./src/assets/vendor/lightgallery/css/lightgallery.min.css");
+__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/assets/vendor/justifiedgallery/css/justifiedGallery.min.css */"./src/assets/vendor/justifiedgallery/css/justifiedGallery.min.css");
+__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/assets/vendor/owl-carousel/css/owl.carousel.min.css */"./src/assets/vendor/owl-carousel/css/owl.carousel.min.css");
+__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/assets/vendor/owl-carousel/css/owl.theme.default.min.css */"./src/assets/vendor/owl-carousel/css/owl.theme.default.min.css");
+__webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/assets/vendor/animate.min.css */"./src/assets/vendor/animate.min.css");
+module.exports = __webpack_require__(/*! /Users/Kevin226j/Desktop/Development/share_photos/public/src/styles.css */"./src/styles.css");
 
 
 /***/ })

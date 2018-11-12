@@ -13,7 +13,7 @@ export class Api<T> {
     constructor(protected http: HttpClient) { }
 
 
-    public baseURL = "http://localhost:8080/api";
+    public baseURL = "api";
 
 
     public extractData = (res: Response) => {

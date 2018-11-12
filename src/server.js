@@ -24,7 +24,7 @@ app.use(express.static('public' + '/dist/public'));
 
 //database connection
 mongoose.Promise = global.Promise;
-mongoose.connect(database.localURL,{useNewUrlParser: true, dbName: 'LMPhotography'});  // for localhOST: {useNewUrlParser: true}
+mongoose.connect(database.atlasURL,{useNewUrlParser: true, dbName: 'demo'});  // for localhOST: {useNewUrlParser: true}
 mongoose.connection.once('open', ()=>{console.log(`DB connected`)});
 
 
