@@ -1,7 +1,7 @@
-# Share Photos Demo App
+# Share Photos - App Demo
 
-Application written using MongoDB, Express.js, Angular 6, Node.js, JWT, Passport.js, and AWS S3
+Application uses MongoDB, Express.js, Angular 6, Node.js, JWT, Passport.js, and AWS S3
 
-Photos by Unspash.
+Photos by Unsplash.
 
 [View Demo Now!](https://share-photos-demo.herokuapp.com/home)
