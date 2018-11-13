@@ -1669,7 +1669,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf= \"authService.isLoggedIn()\" class=\"footer-inner\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-6\">\n        <div class=\"copyright\">\n          &copy; Untitled | Demo Photos : <a href=\"https://unsplash.com/\">Unsplash</a>\n        </div>\n      </div> <!-- /.col -->\n\n      <div class=\"col-sm-6\">\n        <div class=\"social-icons\">\n          <ul>\n            <li><a target=\"_blank\" href=\"https://github.com/kevin226j\" title=\"Check me out on GitHub\"><i\n                  class=\"fab fa-github\"></i></a></li>\n          </ul>\n        </div>\n      </div> <!-- /.col -->\n\n    </div> <!-- /.row -->\n  </div> <!-- /.container -->\n</div> <!-- /.footer-inner -->\n"
+module.exports = "<div *ngIf= \"authService.isLoggedIn()\" class=\"footer-inner\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-6\">\n        <div class=\"copyright\">\n          &copy; Untitled | Demo Photos : <a target=\"_blank\" href=\"https://unsplash.com/\">Unsplash</a> | Website: <a target=\"_blank\" href=\"http://www.kevinkj.com/\">Here</a>\n        </div>\n      </div> <!-- /.col -->\n\n      <div class=\"col-sm-6\">\n        <div class=\"social-icons\">\n          <ul>\n            <li><a target=\"_blank\" href=\"https://github.com/kevin226j\" title=\"Check me out on GitHub\"><i\n                  class=\"fab fa-github\"></i></a></li>\n          </ul>\n        </div>\n      </div> <!-- /.col -->\n\n    </div> <!-- /.row -->\n  </div> <!-- /.container -->\n</div> <!-- /.footer-inner -->\n"
 
 /***/ }),
 
