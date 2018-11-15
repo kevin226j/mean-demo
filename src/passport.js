@@ -2,7 +2,6 @@ const passport = require('passport');
 const JWTStrategy = require('passport-jwt').Strategy;
 const {ExtractJwt} = require('passport-jwt');
 const LocalStrategy = require('passport-local').Strategy;
-const GoogleStrategy = require('passport-google-plus-token');
 const User = require('./app/models/userModel');
 
 require('dotenv').config();
