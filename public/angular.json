@@ -25,6 +25,7 @@
             ],
             "styles": [
               "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/fontawesome/css/all.min.css",
               "src/assets/vendor/lightgallery/css/lightgallery.min.css",
               "src/assets/vendor/justifiedgallery/css/justifiedGallery.min.css",
               "src/assets/vendor/owl-carousel/css/owl.carousel.min.css",
