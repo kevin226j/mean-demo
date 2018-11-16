@@ -698,9 +698,9 @@
 	// =======================================================
 
 	// Disabled on mobile devices, because the video background doesn't work on mobile devices (instead, the background image is displayed).
-	if (!jQuery.browser.mobile){ 
-		$(".youtube-bg").mb_YTPlayer();
-	}
+	// if (!jQuery.browser.mobile){ 
+	// 	$(".youtube-bg").mb_YTPlayer();
+	// }
 
 
 
