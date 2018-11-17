@@ -5,7 +5,7 @@
     "ng": "ng",
     "dev": "concurrently --kill-others \"nodemon --exec babel-node -e js ../server.js\" \"npm start\"",
     "start": "ng serve -o",
-    "build": "ng build",
+    "build": "ng build --source-map=false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
