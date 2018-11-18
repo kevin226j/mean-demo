@@ -1697,4 +1697,3 @@ a.fn.owlCarousel.Constructor.Plugins.Animate=e}(window.Zepto||window.jQuery,wind
 	});
 
 ;
-//# sourceMappingURL=scripts.js.map
