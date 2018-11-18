@@ -4,12 +4,9 @@
   "description": "The project will use the MEAN stack for development",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf build &&  mkdir build",
-    "build-babel": "babel -d ./build ./src -s",
-    "build": "  npm run clean && npm run build-babel",
-    "postinstall": "cd public && npm install && npm run build && cd .. && npm run build",
-    "start": "node ./build/server.js",
+    "build": "webpack --mode production && cd public && npm run build",
+    "postinstall": "cd public && npm install",
+    "start": "node ./dist/server.bundle.js",
     "dev": "nodemon ./src/server.js --exec babel-node -e js"
   },
   "repository": {
@@ -20,9 +17,12 @@
   "license": "MIT",
   "homepage": "https://github.com/kevin226j/share_photos",
   "dependencies": {
+    "@babel/preset-env": "^7.1.6",
+    "@babel/core": "^7.1.6",
     "aws-sdk": "^2.340.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
@@ -44,16 +44,19 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "webpack": "^4.25.1",
+    "webpack-node-externals": "^1.7.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.1.6",
     "@babel/node": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "webpack-cli": "^3.1.2"
   },
   "engines": {
     "node": "8.12.0"

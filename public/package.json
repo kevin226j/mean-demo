@@ -5,7 +5,7 @@
     "ng": "ng",
     "dev": "concurrently --kill-others \"nodemon --exec babel-node -e js ../server.js\" \"npm start\"",
     "start": "ng serve -o",
-    "build": "ng build --aot --vendor-chunk=true",
+    "build": "ng build --aot --vendor-chunk=true --output-path ../dist/public",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

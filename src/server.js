@@ -20,7 +20,7 @@ const port = process.env.PORT || 8080;
 // configuration ===============================================================
 
 //serve ng
-app.use(express.static('public' + '/dist/public'));
+app.use(express.static(path.join(__dirname, '/../', 'dist/public')));
 
 //database connection
 mongoose.Promise = global.Promise;
@@ -32,7 +32,7 @@ mongoose.connection.once('open', ()=>{console.log(`DB connected`)});
 //middle-ware
 
 app.use(morgan(`dev`));
-app.use(express.static('/../public/dist/public/assets'));     // set the static files location
+app.use(express.static(path.join(__dirname, '/../', 'dist/public')));     // set the static files location
 app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                         // parse application/json
 
@@ -63,7 +63,7 @@ app.use(router);
 
 //redirect production routing to index.html
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/../public/dist/public/index.html'));
+    res.sendFile(path.join(__dirname, '..', 'dist', 'public', 'index.html'));
 });
 
 
