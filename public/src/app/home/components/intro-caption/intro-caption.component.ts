@@ -21,7 +21,7 @@ export class IntroCaptionComponent {
 
     constructor(){
         this.title = 'Welcome to the SharePhotos demo!'
-        this.caption = 'Feel free to add an album of your own, and share it with everyone!'
+        this.caption = 'This is my first full-functioning MEAN application! Feel free to add an album of your own, and share it with everyone!'
     }
 
     
